@@ -1,40 +1,24 @@
 var questionBank = [
     {
-        question: "1What is a factory function?",
+        question: "What is a factory function?",
         choices: [["A function that takes an object as an argument and modifies it", false], ["A function that returns an array of objects", false], ["A function that returns an onject", true], ["A function that returns a string of objects", false]]
     },
     {
-        question: "2What is a factory function?",
-        choices: [["A function that takes an object as an argument and modifies it", false], ["A function that returns an array of objects", false], ["A function that returns an onject", true], ["A function that returns a string of objects", false]]
+        question: "Which of the following Object methods can be used to copy all of the properties of an object into a new object?",
+        choices: [["Object.assign()", true], ["Object.keys()", false], ["Object.entries()", false], ["myObject.hasOwnProperty()", false]]
     },
     {
-        question: "3What is a factory function?",
-        choices: [["A function that takes an object as an argument and modifies it", false], ["A function that returns an array of objects", false], ["A function that returns an onject", true], ["A function that returns a string of objects", false]]
+        question: "What is a method?",
+        choices: [["A method is property with a function as its value.", true], ["A method is a general term used to describe how to create objects.", false], ["A metod is a function that takes an object as its parameter.", false], ["A method is a function can be called directly by its name.", false]]
     },
     {
-        question: "4What is a factory function?",
-        choices: [["A function that takes an object as an argument and modifies it", false], ["A function that returns an array of objects", false], ["A function that returns an onject", true], ["A function that returns a string of objects", false]]
+        question: "What is a globally scoped variable?",
+        choices: [["A variable that is accessible in a block, and only inside a block.", false], ["A variable that is accessible to any part of the program.", true], ["A variable that is defined in a function.", false], ["A variable that is also a parameter.", false]]
+    },
+    {
+        question: "Which best defines a variable with block scope?",
+        choices: [["A variable that is available outside of a block.", false], ["A variable that is accessible in a block, and only inside a block.", true], ["A variable that is available throughout a program.", false], ["A variable that is available within a function.", false]]
     }
-    // {
-    //     question: "Which of the following Object methods can be used to copy all of the properties of an object into a new object?",
-    //     choices: ["Object.assign()", "Object.keys()", "Object.entries()", "myObject.hasOwnProperty()"],
-    //     answer: "Object.assign()"
-    // },
-    // {
-    //     question: "What is a method?",
-    //     choices: ["A method is property with a function as its value.", "A method is a general term used to describe how to create objects.", "A metod is a function that takes an object as its parameter.", "A method is a function can be called directly by its name."],
-    //     answer: "A method is property with a function as its value."
-    // },
-    // {
-    //     question: "What is a globally scoped variable?",
-    //     choices: ["A variable that is accessible to any part of the program.", "A variable that is accessible in a block, and only inside a block.", "A variable that is defined in a function.", "A variable that is also a parameter."],
-    //     answer: "A variable that is accessible to any part of the program."
-    // },
-    // {
-    //     question: "Which best defines a variable with block scope?",
-    //     choices: ["A variable that is available outside of a block.", "A variable that is accessible in a block, and only inside a block.", "A variable that is available throughout a program.", "A variable that is available within a function."],
-    //     answer: "A variable that is accessible in a block, and only inside a block."
-    // }
 ];
 var timerEl = document.getElementById('countdown');
 var mainEl = document.getElementById('main');
