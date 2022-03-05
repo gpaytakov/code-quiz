@@ -18,15 +18,22 @@
             <p>Welcome to JavaScript Quiz</p>
             <button class="btn" id="start">Start Quiz</button>
         </div>
-        <section class="quiz-question">
+        <section class="quiz-question hide" id="quiz-quest">
             <h2 class="question-prompt"></h2>
             <ol class="answer-choices" id="answers-to-choose">
-                <li id="c1"></li>
-                <li class="c2"></li>
-                <li class="c3"></li>
-                <li class="c4"></li>
+                <li id="c-1"></li>
+                <li id="c-2"></li>
+                <li id="c-3"></li>
+                <li id="c-4"></li>
             </ol>
         </section>
+        <div class="hide">
+            <form>
+                <label for="initials">Initials</label>
+                <input type="text" name="initials" id= "initials" placeholder="AB"/>
+            </form>
+            <button id="results">Results</button>
+        </div>
         <footer>
             &copy; 2022 by Guvanchmyrat Paytakov
         </footer>
