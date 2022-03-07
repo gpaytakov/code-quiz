@@ -29,14 +29,18 @@ var choice1 = document.getElementById('c-1');
 var choice2 = document.getElementById('c-2');
 var choice3 = document.getElementById('c-3');
 var choice4 = document.getElementById('c-4');
-var initialsInput = document.querySelector('#initials');
-var resultsButton = document.querySelector('#results');
+var initials = document.querySelector('.get-initials');
+var saveResultBtn = document.querySelector('#save-score');
 var olEl = document.getElementById('answers-to-choose');
 var feedback = document.querySelector('.feedback');
 var choiceFeedback = document.getElementById('question-feedback')
-var timeLeft = 60;
+var timeLeft = 90;
 var quizTimer;
 var runTimer = false;
+var highscore = 0;
+var showHighscore = document.querySelector('.highscore')
+var score;
+
 
 // create a function to start a quiz
 function startQuiz() {
@@ -75,7 +79,9 @@ function getQuestion() {
         if (timeLeft === 0 || cQI >= questionBank.length) {
             runTimer = false;
             el.classList.add("hide")
-            showResult(timeLeft);
+            score = timeLeft;
+            initials.classList.remove("hide")
+
         } else {
             el.classList.remove("hide")
             questionPrompt.innerHTML = questionBank[cQI].question;
@@ -85,16 +91,28 @@ function getQuestion() {
             choice4.innerHTML = questionBank[cQI].choices[3][0];
         } 
 }
-resultsButton.addEventListener("click", function(event) {
+saveResultBtn.addEventListener("click", function(event) {
     event.preventDefault();
-
-    var quizTaker = {
-        initials: initialsInput.value.trim()
+    var getInitials = document.querySelector('#initials').value.trim().toUpperCase();
+    var scores;
+    if (localStorage.getItem("scores")) {
+        scores = JSON.parse(localStorage.getItem("scores"));
+        scores.push(`${score}, ${getInitials}`)
+        localStorage.setItem("scores", JSON.stringify(scores));
+    } else {
+        scores = [];
+        scores.push(`${score}, ${getInitials}`)
+        localStorage.setItem("scores", JSON.stringify(scores));
     }
+    showHighScore();
 });
 
-function showResult(score) {
-    console.log(score);   
+function showHighScore() {
+    highscore = JSON.parse(localStorage.getItem("scores"));
+    highscore.sort(function(a, b) {
+        return a[0] - b[0];
+    });
+    showHighscore.innerHTML = `Highscore ${highscore.slice(-1)}`;
 };
 
 
@@ -110,13 +128,13 @@ function questionFeedback(tf) {
     } 
     setTimeout(function() {
         choiceFeedback.classList.add("hide")
-    }, 1000);   
+    }, 500);   
 }
     
 function olAnswerClick(event) {
     var index = parseInt(event.target.id.split("-")[1])-1;
     var tf = questionBank[cQI].choices[index][1];
-    console.log(tf)
+    console.log(tf);
     cQI++;
         if (!tf) {
         timeLeft = timeLeft-10;

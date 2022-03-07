@@ -1,3 +1,26 @@
 .hide {
     display: none
 }
+
+.quiz-question {
+    color: blue;
+    background: lightgray;
+}
+#countdown {
+    text-align: end;
+    margin: 10px;
+    padding: 10px;
+}
+li {
+    margin: 10px;
+    padding: 10px;
+    background: lightpink;
+    border-radius: 5px;
+}
+
+footer, form, .get-initials, #start, div.start-quiz {
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+}
+
